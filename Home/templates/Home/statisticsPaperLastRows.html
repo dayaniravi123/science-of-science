@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Statistics</title>
+    <script type="text/javascript">
+
+        function showMessage() {
+                document.getElementById("myblock").style.display = "block";
+                document.getElementByTagName("body").style.opacity = 0.3;
+            }
+    </script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 
@@ -31,24 +38,32 @@
         </div>
       </div>
     </nav>
-    <a href="/Home/statisticsMostCommonAuthor/" class="btn btn-primary">
+    <a href="/Home/statisticsMostCommonAuthor/" class="btn btn-primary" onclick="showMessage()">
           Most Common Author
     </a>
-    <a href="/Home/statisticsLeastCommonAuthor/" class="btn btn-primary">
+    <a href="/Home/statisticsLeastCommonAuthor/" class="btn btn-primary" onclick="showMessage()">
           Least Common Author
     </a>
-    <a href="/Home/statisticsTopCitation/" class="btn btn-primary">
+    <a href="/Home/statisticsTopCitation/" class="btn btn-primary" onclick="showMessage()">
           Highest Citations(Author)
     </a>
-    <a href="/Home/statisticsLastCitation/" class="btn btn-primary">
+    <a href="/Home/statisticsLastCitation/" class="btn btn-primary" onclick="showMessage()">
           Lowest Citations(Author)
     </a>
-    <a href="/Home/statisticsPaperTopRows/" class="btn btn-primary">
+    <a href="/Home/statisticsPaperTopRows/" class="btn btn-primary" onclick="showMessage()">
           Highest Citations(Research Paper)
     </a>
-    <a href="/Home/statisticsPaperLastRows/" class="btn btn-primary">
+    <a href="/Home/statisticsPaperLastRows/" class="btn btn-primary" onclick="showMessage()">
           Lowest Citations(Research Paper)
     </a>
+
+    <div id = "myblock" class="card border-info" style="display:none;position:absolute;top:100px;left:600px; max-width: 18rem;">
+
+          <div class="card-body text-info">
+            <h5 class="card-title">Processing...</h5>
+            <p class="card-text">Please wait as it takes minimum a minute for processing.</p>
+          </div>
+    </div>
 
     <div class="card container" style="width:60%;">
       <div class="card-header">

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Science of Science</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/Home/index/">Conferences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Home/author/">Author</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="/Home/statisticsMostCommonAuthor/" class="btn btn-primary">
+          Most Common Author
+    </a>
+    <a href="/Home/statisticsLeastCommonAuthor/" class="btn btn-primary">
+          Least Common Author
+    </a>
+    <a href="/Home/statisticsTopCitation/" class="btn btn-primary">
+          Highest Citations(Author)
+    </a>
+    <a href="/Home/statisticsLastCitation/" class="btn btn-primary">
+          Lowest Citations(Author)
+    </a>
+    <a href="/Home/statisticsPaperTopRows/" class="btn btn-primary">
+          Highest Citations(Research Paper)
+    </a>
+    <a href="/Home/statisticsPaperLastRows/" class="btn btn-primary">
+          Lowest Citations(Research Paper)
+    </a>
+
+    <div class="card container" style="width:60%;">
+      <div class="card-header">
+        Least Common Authors
+      </div>
+      <div class="card-body">
+        <div class="list-group">
+            <a href="#" style = "margin:5px;padding:10px;" class="list-group-item list-group-item-action" aria-current="true">
+                <p class="mb-1">Author Name --> Appearance in papers</p>
+            </a>
+        </div>
+        {% for record in lastrows %}
+        <div class="list-group">
+            <a href="#" style = "margin:5px;padding:10px;" class="list-group-item list-group-item-action" aria-current="true">
+                <p class="mb-1">{{record.index}} --> {{record.values}}</p>
+            </a>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+
+</body>
+</html>

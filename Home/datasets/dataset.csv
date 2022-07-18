@@ -1,0 +1,122 @@
+,PaperName,Year,sources
+0,A 0.5 mm2 Ambient Light-Driven Solar Cell-Powered Biofuel Cell-Input Biosensing System with LED Driving for Stand-Alone RF-Less Continuous Glucose Monitoring Contact Lens.,2022,IEEE
+1,A 76-81 GHz FMCW 2TX/3RX Radar Transceiver with Integrated Mixed-Mode PLL and Series-Fed Patch Antenna Array.,2022,IEEE
+2,A 5.2GHz RFID Chip Contactlessly Mountable on FPC at any 90-Degree Rotation and Face Orientation.,2022,IEEE
+3,A 40nm CMOS SoC for Real-Time Dysarthric Voice Conversion of Stroke Patients.,2022,IEEE
+4,A Side-Channel Hardware Trojan in 65nm CMOS with $2\mu\mathrm{W}$ precision and Multi-bit Leakage Capability.,2022,IEEE
+5,SC-K9: A Self-synchronizing Framework to Counter Micro-architectural Side Channels.,2022,IEEE
+6,CacheGuard: A Behavior Model Checker for Cache Timing Side-Channel Security: (Invited Paper).,2022,IEEE
+7,Lightweight and Secure Branch Predictors against Spectre Attacks.,2022,IEEE
+8,Computation-in-Memory Accelerators for Secure Graph Database: Opportunities and Challenges.,2022,IEEE
+9,HEALM: Hardware-Efficient Approximate Logarithmic Multiplier with Reduced Error.,2022,IEEE
+10,DistriHD: A Memory Efficient Distributed Binary Hyperdimensional Computing Architecture for Image Classification.,2022,IEEE
+11,Thermal-Aware Layout Optimization and Mapping Methods for Resistive Neuromorphic Engines.,2022,IEEE
+12,NR-Router: Non-Regular Electrode Routing with Optimal Pin Selection for Electrowetting-on-Dielectric Chips.,2022,IEEE
+13,Design-for-Reliability and Probability-Based Fault Tolerance for Paper-Based Digital Microfluidic Biochips with Multiple Faults.,2022,IEEE
+14,Improving the Robustness of Microfluidic Networks.,2022,IEEE
+15,An Efficient Kriging-based Constrained Multi-objective Evolutionary Algorithm for Analog Circuit Synthesis via Self-adaptive Incremental Learning.,2022,IEEE
+16,Fast Variation-aware Circuit Sizing Approach for Analog Design with ML-Assisted Evolutionary Algorithm.,2022,IEEE
+17,A Novel and Efficient Bayesian Optimization Approach for Analog Designs with Multi-Testbench.,2022,IEEE
+18,A 2.17μW@120fps Ultra-Low-Power Dual-Mode CMOS Image Sensor with Senputing Architecture.,2022,IEEE
+19,A Reconfigurable Inference Processor for Recurrent Neural Networks Based on Programmable Data Format in a Resource-Limited FPGA.,2022,IEEE
+20,Supply-Variation-Tolerant Transimpedance Amplifier Using Non-Inverting Amplifier in 180-nm CMOS.,2022,IEEE
+21,Deformable Chiplet-Based Computer Using Inductively Coupled Wireless Communication.,2022,IEEE
+22,Analog/Mixed-Signal Circuit Synthesis Enabled by the Advancements of Circuit Architectures and Machine Learning Algorithms.,2022,IEEE
+23,Automating Analog Constraint Extraction: From Heuristics to Learning: (Invited Paper).,2022,IEEE
+24,Common-Centroid Layout for Active and Passive Devices: A Review and the Road Ahead.,2022,IEEE
+25,PUMP: Profiling-free Unified Memory Prefetcher for Large DNN Model Support.,2022,IEEE
+26,RADARS: Memory Efficient Reinforcement Learning Aided Differentiable Neural Architecture Search.,2022,IEEE
+27,A Heuristic Exploration of Retraining-free Weight-Sharing for CNN Compression.,2022,IEEE
+28,HiKonv: High Throughput Quantized Convolution With Novel Bit-wise Management and Computation.,2022,IEEE
+29,Mapping Large Scale Finite Element Computing on to Wafer-Scale Engines.,2022,IEEE
+30,Generalizing Tandem Simulation: Connecting High-level and RTL Simulation Models.,2022,IEEE
+31,Automated Detection of Spatial Memory Safety Violations for Constrained Devices.,2022,IEEE
+32,Lithography Hotspot Detection via Heterogeneous Federated Learning with Local Adaptation.,2022,IEEE
+33,Voronoi Diagram Based Heterogeneous Circuit Layout Centerline Extraction for Mask Verification.,2022,IEEE
+34,Signal-Integrity-Aware Interposer Bus Routing in 2.5D Heterogeneous Integration.,2022,IEEE
+35,Pre-Routing Path Delay Estimation Based on Transformer and Residual Framework.,2022,IEEE
+36,Efficient Critical Paths Search Algorithm using Mergeable Heap.,2022,IEEE
+37,A Graph Neural Network Method for Fast ECO Leakage Power Optimization.,2022,IEEE
+38,Vector-based Dynamic IR-drop Prediction Using Machine Learning.,2022,IEEE
+39,Fast Electromigration Stress Analysis Considering Spatial Joule Heating Effects.,2022,IEEE
+40,SONIC: A Sparse Neural Network Inference Accelerator with Silicon Photonics for Energy-Efficient Deep Learning.,2022,IEEE
+41,XCelHD: An Efficient GPU-Powered Hyperdimensional Computing with Parallelized Training.,2022,IEEE
+42,"HAWIS: Hardware-Aware Automated WIdth Search for Accurate, Energy-Efficient and Robust Binary Neural Network on ReRAM Dot-Product Engine.",2022,IEEE
+43,SYNTHNET: A High-throughput yet Energy-efficient Combinational Logic Neural Network.,2022,IEEE
+44,Optimal Data Allocation for Graph Processing in Processing-in-Memory Systems.,2022,IEEE
+45,Boosting the Search Performance of B+-tree with Sentinels for Non-volatile Memory.,2022,IEEE
+46,Algorithm and Hardware Co-design for Reconfigurable CNN Accelerator.,2022,IEEE
+47,Exploring ILP for VLIW Architecture by Quantified Modeling and Dynamic Programming-Based Instruction Scheduling.,2022,IEEE
+48,Time-Triggered Scheduling for Time-Sensitive Networking with Preemption.,2022,IEEE
+49,A Task Parallelism Runtime Solution for Deep Learning Applications using MPSoC on Edge Devices.,2022,IEEE
+50,Circuit and System Technologies for Energy-Efficient Edge Robotics: (Invited Paper).,2022,IEEE
+51,RTL Regression Test Selection using Machine Learning.,2022,IEEE
+52,Net Separation-Oriented Printed Circuit Board Placement via Margin Maximization.,2022,IEEE
+53,HybridGP: Global Placement for Hybrid-Row-Height Designs.,2022,IEEE
+54,DREAMPlaceFPGA: An Open-Source Analytical Placer for Large Scale Heterogeneous FPGAs using Deep-Learning Toolkit.,2022,IEEE
+55,Linear Feedback Shift Register Reseeding for Stochastic Circuit Repairing and Minimization.,2022,IEEE
+56,BSC: Block-based Stochastic Computing to Enable Accurate and Efficient TinyML.,2022,IEEE
+57,Streaming Accuracy: Characterizing Early Termination in Stochastic Computing.,2022,IEEE
+58,TENET: Temporal CNN with Attention for Anomaly Detection in Automotive Cyber-Physical Systems.,2022,IEEE
+59,ELight: Enabling Efficient Photonic In-Memory Neurocomputing with Life Enhancement.,2022,IEEE
+60,Solving Least-Squares Fitting in $O(1)$ Using RRAM-based Computing-in-Memory Technique.,2022,IEEE
+61,SonicFFT: A system architecture for ultrasonic-based FFT acceleration.,2022,IEEE
+62,FirVer: Concolic Testing for Systematic Validation of Firmware Binaries.,2022,IEEE
+63,WAL: A Novel Waveform Analysis Language for Advanced Design Understanding and Debugging.,2022,IEEE
+64,Accelerate SAT-based ATPG via Preprocessing and New Conflict Management Heuristics.,2022,IEEE
+65,A Fast and Accurate Middle End of Line Parasitic Capacitance Extraction for MOSFET and FinFET Technologies Using Machine Learning.,2022,IEEE
+66,Lamina: Low Overhead Wear Leveling for NVM with Bounded Tail.,2022,IEEE
+67,Heterogeneous Memory Architecture Accommodating Processing-in-Memory on SoC for AIoT Applications.,2022,IEEE
+68,Optimal Loop Tiling for Minimizing Write Operations on NVMs with Complete Memory Latency Hiding.,2022,IEEE
+69,Boolean Rewriting Strikes Back: Reconvergence-Driven Windowing Meets Resynthesis.,2022,IEEE
+70,Delay Optimization of Combinational Logic by AND-OR Path Restructuring.,2022,IEEE
+71,A Versatile Mapping Approach for Technology Mapping and Graph Optimization.,2022,IEEE
+72,Avatar: Reinforcing Fault Attack Countermeasures in EDA with Fault Transformations.,2022,IEEE
+73,Anti-Piracy of Analog and Mixed-Signal Circuits in FD-SOI.,2022,IEEE
+74,Toward Optical Probing Resistant Circuits: A Comparison of Logic Styles and Circuit Design Techniques.,2022,IEEE
+75,Dynamic CNN Accelerator Supporting Efficient Filter Generator with Kernel Enhancement and Online Channel Pruning.,2022,IEEE
+76,Toward Low-Bit Neural Network Training Accelerator by Dynamic Group Accumulation.,2022,IEEE
+77,An Energy-Efficient Bit-Split-and-Combination Systolic Accelerator for NAS-Based Multi-Precision Convolution Neural Networks.,2022,IEEE
+78,Multi-Precision Deep Neural Network Acceleration on FPGAs.,2022,IEEE
+79,Efficient Preparation of Cyclic Quantum States.,2022,IEEE
+80,Limiting the Search Space in Optimal Quantum Circuit Mapping.,2022,IEEE
+81,Efficient Routing in Coarse-Grained Reconfigurable Arrays Using Multi-Pole NEM Relays.,2022,IEEE
+82,Fault Testing and Diagnosis Techniques for Carbon Nanotube-Based FPGAs.,2022,IEEE
+83,Fast Thermal Analysis for Chiplet Design based on Graph Convolution Networks.,2022,IEEE
+84,Design Close to the Edge for Advanced Technology using Machine Learning and Brain-Inspired Algorithms.,2022,IEEE
+85,Reinforcement Learning for Electronic Design Automation: Case Studies and Perspectives: (Invited Paper).,2022,IEEE
+86,Differentially Evolving Memory Ensembles: Pareto Optimization based on Computational Intelligence for Embedded Memories on a System Level.,2022,IEEE
+87,"Transient Adjoint DAE Sensitivities: a Complete, Rigorous, and Numerically Accurate Formulation.",2022,IEEE
+88,Generative-Adversarial-Network-Guided Well-Aware Placement for Analog Circuits.,2022,IEEE
+89,TAFA: Design Automation of Analog Mixed-Signal FIR Filters Using Time Approximation Architecture.,2022,IEEE
+90,Efficient Computer Vision on Edge Devices with Pipeline-Parallel Hierarchical Neural Networks.,2022,IEEE
+91,Efficient On-Device Incremental Learning by Weight Freezing.,2022,IEEE
+92,$\text{Edge}^{n}$ AI: Distributed Inference with Local Edge Devices and Minimal Latency.,2022,IEEE
+93,"Large Forests and Where to ""Partially"" Fit Them.",2022,IEEE
+94,AdaSens: Adaptive Environment Monitoring by Coordinating Intermittently-Powered Sensors.,2022,IEEE
+95,Energy Harvesting Aware Multi-Hop Routing Policy in Distributed IoT System Based on Multi-Agent Reinforcement Learning.,2022,IEEE
+96,An Accuracy Reconfigurable Vector Accelerator Based on Approximate Logarithmic Multipliers.,2022,IEEE
+97,Neural Network Pruning and Fast Training for DRL-based UAV Trajectory Planning.,2022,IEEE
+98,High-Correlation 3D Routability Estimation for Congestion-guided Global Routing.,2022,IEEE
+99,SPRoute 2.0: A detailed-routability-driven deterministic parallel global router with soft capacity.,2022,IEEE
+100,FPGA-Accelerated Maze Routing Kernel for VLSI Designs.,2022,IEEE
+101,Reliable Memristive Neural Network Accelerators Based on Early Denoising and Sparsity Induction.,2022,IEEE
+102,Boosting ReRAM-based DNN by Row Activation Oversubscription.,2022,IEEE
+103,XBM: A Crossbar Column-wise Binary Mask Learning Method for Efficient Multiple Task Adaption.,2022,IEEE
+104,CGRA Mapping Using Zero-Suppressed Binary Decision Diagrams.,2022,IEEE
+105,Improving the Quality of Hardware Accelerators through automatic Behavioral Input Language Conversion in HLS.,2022,IEEE
+106,Hotspot Mitigation through Multi-Row Thermal-aware Re-Placement of Logic Cells based on High-Level Synthesis Scheduling.,2022,IEEE
+107,Techniques for CAD Tool Parameter Auto-tuning in Physical Synthesis: A Survey (Invited Paper).,2022,IEEE
+108,Application of Deep Learning in Back-End Simulation: Challenges and Opportunities.,2022,IEEE
+109,EasyMAC: Design Exploration-Enabled Multiplier-Accumulator Generator Using a Canonical Architectural Representation: (Invited Paper).,2022,IEEE
+110,DVFSspy: Using Dynamic Voltage and Frequency Scaling as a Covert Channel for Multiple Procedures.,2022,IEEE
+111,FORTIFY: Analytical Pre-Silicon Side-Channel Characterization of Digital Designs.,2022,IEEE
+112,Data Leakage through Self-Terminated Write Schemes in Memristive Caches.,2022,IEEE
+113,A Voltage Template Attack on the Modular Polynomial Subtraction in Kyber.,2022,IEEE
+114,FeMIC: Multi-Operands in-Memory Computing Based on FeFETs.,2022,IEEE
+115,Sparsity-Aware Non-Volatile Computing-In-Memory Macro with Analog Switch Array and Low-Resolution Current-Mode ADC.,2022,IEEE
+116,STREAM: Towards READ-based In-Memory Computing for Streaming based Data Processing.,2022,IEEE
+117,On the Viability of Decision Trees for Learning Models of Systems.,2022,IEEE
+118,This is SPATEM! A Spatial-Temporal Optimization Framework for Efficient Inference on ReRAM-based CNN Accelerator.,2022,IEEE
+119,HACScale: Hardware-Aware Compound Scaling for Resource-Efficient DNNs.,2022,IEEE
+120,Pearl: Towards Optimization of DNN-accelerators Via Closed-Form Analytical Representation.,2022,IEEE

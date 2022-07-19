@@ -7,7 +7,8 @@
 
         function showMessage() {
                 document.getElementById("myblock").style.display = "block";
-                document.getElementByTagName("body").style.opacity = 0.3;
+                document.getElementById("mynav").style.opacity = 0.3;
+                document.getElementById("submenu").style.opacity = 0.3;
             }
     </script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -19,7 +20,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mynav">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Science of Science</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,24 +39,26 @@
         </div>
       </div>
     </nav>
-    <a href="/Home/statisticsMostCommonAuthor/" class="btn btn-primary" onclick="showMessage()">
-          Most Common Author
-    </a>
-    <a href="/Home/statisticsLeastCommonAuthor/" class="btn btn-primary" onclick="showMessage()">
-          Least Common Author
-    </a>
-    <a href="/Home/statisticsTopCitation/" class="btn btn-primary" onclick="showMessage()">
-          Highest Citations(Author)
-    </a>
-    <a href="/Home/statisticsLastCitation/" class="btn btn-primary" onclick="showMessage()">
-          Lowest Citations(Author)
-    </a>
-    <a href="/Home/statisticsPaperTopRows/" class="btn btn-primary" onclick="showMessage()">
-          Highest Citations(Research Paper)
-    </a>
-    <a href="/Home/statisticsPaperLastRows/" class="btn btn-primary" onclick="showMessage()">
-          Lowest Citations(Research Paper)
-    </a>
+    <div id="submenu">
+        <a href="/Home/statisticsMostCommonAuthor/" class="btn btn-primary" onclick="showMessage()">
+              Most Common Author
+        </a>
+        <a href="/Home/statisticsLeastCommonAuthor/" class="btn btn-primary" onclick="showMessage()">
+              Least Common Author
+        </a>
+        <a href="/Home/statisticsTopCitation/" class="btn btn-primary" onclick="showMessage()">
+              Highest Citations(Author)
+        </a>
+        <a href="/Home/statisticsLastCitation/" class="btn btn-primary" onclick="showMessage()">
+              Lowest Citations(Author)
+        </a>
+        <a href="/Home/statisticsPaperTopRows/" class="btn btn-primary" onclick="showMessage()">
+              Highest Citations(Research Paper)
+        </a>
+        <a href="/Home/statisticsPaperLastRows/" class="btn btn-primary" onclick="showMessage()">
+              Lowest Citations(Research Paper)
+        </a>
+    </div>
 
     <div id = "myblock" class="card border-info" style="display:none;position:absolute;top:100px;left:600px; max-width: 18rem;">
 

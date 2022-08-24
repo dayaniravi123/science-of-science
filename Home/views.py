@@ -203,6 +203,18 @@ def statistics(request):
 
 def statisticsTopCitation(request):
     data = pd.read_csv(str(request.session['file_name']))
+    file_name = str(request.session['file_name'])[:-4] + 'statisticsTopCitation'
+    saved_file_name = file_name + '.csv'
+    request.session['file_name_TCstatistics'] = saved_file_name
+
+    if os.path.exists(saved_file_name):
+        data_frame = pd.read_csv(saved_file_name)
+        top_five_citations = data_frame.to_dict('records')
+        return render(request, "Home/statisticsTopCitation.html",
+                      {
+                          'topcitation': top_five_citations
+                      })
+
     authors = list(data['authors'])
     new_author_list = []
     for i in range(len(authors)):
@@ -228,6 +240,8 @@ def statisticsTopCitation(request):
     })
     new_df_author_citation = new_df_author_citation.sort_values(by='authorCitation', ascending=False)
     top_five_rows_author_citation = new_df_author_citation.iloc[:5, :]
+    top_five_rows_author_citation.to_csv(saved_file_name)
+    request.session['file_name_TCstatistics'] = saved_file_name
 
     top_five_citations = top_five_rows_author_citation.to_dict('records')
 
@@ -238,6 +252,17 @@ def statisticsTopCitation(request):
 
 def statisticsLastCitation(request):
     data = pd.read_csv(str(request.session['file_name']))
+    file_name = str(request.session['file_name'])[:-4] + 'statisticsLastCitation'
+    saved_file_name = file_name + '.csv'
+    request.session['file_name_LCstatistics'] = saved_file_name
+
+    if os.path.exists(saved_file_name):
+        data_frame = pd.read_csv(saved_file_name)
+        last_five_citations = data_frame.to_dict('records')
+        return render(request, "Home/statisticsLastCitation.html",
+                      {
+                          'lastcitation': last_five_citations})
+
     authors = list(data['authors'])
     new_author_list = []
     for i in range(len(authors)):
@@ -264,6 +289,9 @@ def statisticsLastCitation(request):
 
     new_df_author_citation = new_df_author_citation.sort_values(by='authorCitation', ascending=True)
     last_five_rows_author_citation = new_df_author_citation.iloc[:5, :]
+    last_five_rows_author_citation.to_csv(saved_file_name)
+    request.session['file_name_LCstatistics'] = saved_file_name
+
     last_five_citations = last_five_rows_author_citation.to_dict('records')
 
     return render(request, "Home/statisticsLastCitation.html",
@@ -273,6 +301,19 @@ def statisticsLastCitation(request):
 
 def statisticsMostCommonAuthor(request):
     data = pd.read_csv(str(request.session['file_name']))
+
+    file_name = str(request.session['file_name'])[:-4] + 'statisticsMostCommonAuthor'
+    saved_file_name = file_name + '.csv'
+    request.session['file_name_MCAstatistics'] = saved_file_name
+
+    if os.path.exists(saved_file_name):
+        data_frame = pd.read_csv(saved_file_name)
+        top_rows = data_frame.to_dict('records')
+
+        return render(request, "Home/statisticsMostCommonAuthor.html",
+                      {'toprows': top_rows
+                       })
+
     authors = list(data['authors'])
     new_author_list = []
     for i in range(len(authors)):
@@ -283,6 +324,8 @@ def statisticsMostCommonAuthor(request):
     df = df.reset_index()
     df = df.sort_values(by='values', ascending=False)
     top_five_rows = df.iloc[:5, :]
+    top_five_rows.to_csv(saved_file_name)
+    request.session['file_name_MCAstatistics'] = saved_file_name
 
     top_rows = top_five_rows.to_dict('records')
 
@@ -292,6 +335,18 @@ def statisticsMostCommonAuthor(request):
 
 def statisticsLeastCommonAuthor(request):
     data = pd.read_csv(str(request.session['file_name']))
+    file_name = str(request.session['file_name'])[:-4] + 'statisticsLeastCommonAuthor'
+    saved_file_name = file_name + '.csv'
+    request.session['file_name_LCAstatistics'] = saved_file_name
+
+    if os.path.exists(saved_file_name):
+        data_frame = pd.read_csv(saved_file_name)
+        last_rows = data_frame.to_dict('records')
+        return render(request, "Home/statisticsLeastCommonAuthor.html",
+                      {
+                          'lastrows': last_rows
+                      })
+
     authors = list(data['authors'])
     new_author_list = []
     for i in range(len(authors)):
@@ -300,14 +355,11 @@ def statisticsLeastCommonAuthor(request):
     count_author = Counter(new_author_list)
     df = pd.DataFrame.from_dict(count_author, orient='index', columns=['values'])
     df = df.reset_index()
-
     df = df.sort_values(by='values', ascending=True)
     last_five_rows = df.iloc[:5, :]
-
-
+    last_five_rows.to_csv(saved_file_name)
+    request.session['file_name_LCAstatistics'] = saved_file_name
     last_rows = last_five_rows.to_dict('records')
-
-
     return render(request, "Home/statisticsLeastCommonAuthor.html",
                   {
                    'lastrows': last_rows
@@ -316,6 +368,19 @@ def statisticsLeastCommonAuthor(request):
 
 def statisticsPaperTopRows(request):
     dataset = pd.read_csv(str(request.session['file_name']))
+
+    file_name = str(request.session['file_name'])[:-4] + 'statisticsPaperTopRows'
+    saved_file_name = file_name + '.csv'
+    request.session['file_name_PTRstatistics'] = saved_file_name
+
+    if os.path.exists(saved_file_name):
+        data_frame = pd.read_csv(saved_file_name)
+        top_five_citations = data_frame.to_dict('records')
+        return render(request, "Home/statisticsPaperTopRows.html",
+                      {
+                          'toppaper': top_five_citations
+                      })
+
     papers = list(dataset['PaperName'])
     citations_per_paper = []
 
@@ -338,7 +403,8 @@ def statisticsPaperTopRows(request):
     })
     new_df_paper_citation = new_df_paper_citation.sort_values(by='paperCitation', ascending=False)
     top_five_rows_paper_citation = new_df_paper_citation.iloc[:5, :]
-
+    top_five_rows_paper_citation.to_csv(saved_file_name)
+    request.session['file_name_PTRstatistics'] = saved_file_name
     top_five_citations = top_five_rows_paper_citation.to_dict('records')
 
     return render(request, "Home/statisticsPaperTopRows.html",
@@ -348,6 +414,18 @@ def statisticsPaperTopRows(request):
 
 def statisticsPaperLastRows(request):
     dataset = pd.read_csv(str(request.session['file_name']))
+    file_name = str(request.session['file_name'])[:-4] + 'statisticsPaperLastRows'
+    saved_file_name = file_name + '.csv'
+    request.session['file_name_PLRstatistics'] = saved_file_name
+
+    if os.path.exists(saved_file_name):
+        data_frame = pd.read_csv(saved_file_name)
+        last_five_citations = data_frame.to_dict('records')
+        return render(request, "Home/statisticsPaperLastRows.html",
+                    {
+                          'lastpaper': last_five_citations
+                      })
+
     papers = list(dataset['PaperName'])
     citations_per_paper = []
 
@@ -371,7 +449,8 @@ def statisticsPaperLastRows(request):
 
     new_df_paper_citation = new_df_paper_citation.sort_values(by='paperCitation', ascending=True)
     last_five_rows_paper_citation = new_df_paper_citation.iloc[:5, :]
-
+    last_five_rows_paper_citation.to_csv(saved_file_name)
+    request.session['file_name_PLRstatistics'] = saved_file_name
     last_five_citations = last_five_rows_paper_citation.to_dict('records')
 
     return render(request, "Home/statisticsPaperLastRows.html",
@@ -382,6 +461,16 @@ def statisticsPaperLastRows(request):
 
 def authorStatistics(request):
     data = pd.read_csv(str(request.session['file_name']))
+
+    file_name = str(request.session['file_name'])[:-4] + 'authorStatistics'
+    saved_file_name = file_name + '.csv'
+    request.session['file_name_authorstatistics'] = saved_file_name
+
+    if os.path.exists(saved_file_name):
+        data_frame = pd.read_csv(saved_file_name)
+        data = data_frame.to_dict('records')
+        return render(request, "Home/authorStatistics.html",{'context':data})
+
     papernames = list(data['PaperName'])
     author_name = []
     author_affiliation = []
@@ -391,8 +480,9 @@ def authorStatistics(request):
         string_url = string_url.replace(" ", "+")
         url = 'https://api.openalex.org/works?search=' + string_url
         data = requests.get(url)
-        data = data.json()
+
         try:
+            data = data.json()
             all_authors = data['results'][0]['authorships']
             for j in range(len(all_authors)):
                 author_name.append(all_authors[j]['author']['display_name'])
@@ -404,6 +494,9 @@ def authorStatistics(request):
     res = Counter(author_affiliation)
     data_frame = pd.DataFrame.from_dict(res, orient="index", columns=["values"])
     data_frame = data_frame.reset_index()
+    data_frame.to_csv(saved_file_name)
+    request.session['file_name_authorstatistics'] = saved_file_name
+
     data = data_frame.to_dict('records')
 
     return render(request, "Home/authorStatistics.html",{'context':data})

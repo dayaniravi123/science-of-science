@@ -15,7 +15,7 @@ urlpatterns = [
     path('statisticsLastCitation/', views.statisticsLastCitation, name='statisticsLastCitation'),
     path('statisticsPaperTopRows/', views.statisticsPaperTopRows, name='statisticsPaperTopRows'),
     path('statisticsPaperLastRows/', views.statisticsPaperLastRows, name='statisticsPaperLastRows'),
-
+    path('bestPaper/', views.bestPaper, name='bestPaper'),
     path('getauthordetails/', views.getauthordetails, name = 'getauthordetails'),
     path('downloadfile/', views.downloadfile, name='downloadfile'),
 

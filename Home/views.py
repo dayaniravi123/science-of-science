@@ -387,7 +387,7 @@ def statisticsPaperTopRows(request):
     for i in range(len(papers)):
         string_url = papers[i]
         string_url = string_url.replace(" ", "+")
-        url = 'https://api.openalex.org/works?search=' + string_url
+        url = 'https://api.openalex.org/works?filter=title.search:' + string_url
 
         data = requests.get(url)
         data = data.json()
@@ -432,7 +432,7 @@ def statisticsPaperLastRows(request):
     for i in range(len(papers)):
         string_url = papers[i]
         string_url = string_url.replace(" ", "+")
-        url = 'https://api.openalex.org/works?search=' + string_url
+        url = 'https://api.openalex.org/works?filter=title.search:' + string_url
 
         data = requests.get(url)
         data = data.json()
@@ -478,7 +478,7 @@ def authorStatistics(request):
     for i in range(len(papernames)):
         string_url = papernames[i]
         string_url = string_url.replace(" ", "+")
-        url = 'https://api.openalex.org/works?search=' + string_url
+        url = 'https://api.openalex.org/works?filter=title.search:' + string_url
         data = requests.get(url)
 
         try:
@@ -500,3 +500,37 @@ def authorStatistics(request):
     data = data_frame.to_dict('records')
 
     return render(request, "Home/authorStatistics.html",{'context':data})
+
+def bestPaper(request):
+    driver = webdriver.Chrome()
+    driver.get('https://jeffhuang.com/best_paper_awards/')
+    subresult = driver.find_elements_by_id('2022')
+    subres = subresult[0].find_elements_by_tag_name('tr')
+
+    conference_name = []
+    for i in range(1, len(subres)):
+        temp = []
+        for j in subres[i].find_elements_by_tag_name('th'):
+            temp.append(j.text)
+        for j in subres[i].find_elements_by_tag_name('td'):
+            temp.append(j.text.split("; ")[0])
+        conference_name.append(temp)
+    cf_name = []
+    paper_name = []
+    author_name = []
+    for i in range(len(conference_name)):
+        if len(conference_name[i]) > 2:
+            cf_name.append(conference_name[i][0])
+            paper_name.append(conference_name[i][1])
+            author_name.append(conference_name[i][2])
+        else:
+            cf_name.append(conference_name[i-1][0])
+            paper_name.append(conference_name[i][0])
+            author_name.append(conference_name[i][1])
+    df_conference = pd.DataFrame({
+        'cfName':cf_name,
+        'paperName':paper_name,
+        'authorName':author_name
+    })
+    data = df_conference.to_dict('records')
+    return render(request, "Home/bestPaper.html", {'context':data})

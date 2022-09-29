@@ -11,9 +11,438 @@ from scholarly import scholarly
 import gender_guesser.detector as gender
 from scholarly import scholarly
 from collections import Counter
+from serpapi import GoogleSearch
 
 ## Global variable
 authors = []
+
+import math
+import urllib
+import urllib.request as urllib2
+import xml.etree.ElementTree as ET
+import json
+import ast
+
+
+# from scholarly import scholarly
+
+
+class XPLORE:
+    # API endpoint (all non-Open Access)
+    endPoint = "http://ieeexploreapi.ieee.org/api/v1/search/articles"
+
+    # Open Access Document endpoint
+    openAccessEndPoint = "http://ieeexploreapi.ieee.org/api/v1/search/document/"
+
+    def __init__(self, apiKey):
+
+        # API key
+        self.apiKey = apiKey
+
+        # flag that some search criteria has been provided
+        self.queryProvided = False
+
+        # flag for Open Access, which changes endpoint in use and limits results to just Open Access
+        self.usingOpenAccess = False
+
+        # flag that article number has been provided, which overrides all other search criteria
+        self.usingArticleNumber = False
+
+        # flag that a boolean method is in use
+        self.usingBoolean = False
+
+        # flag that a facet is in use
+        self.usingFacet = False
+
+        # flag that a facet has been applied, in the event that multiple facets are passed
+        self.facetApplied = False
+
+        # data type for results; default is json (other option is xml)
+        self.outputType = 'json'
+
+        # data format for results; default is raw (returned string); other option is object
+        self.outputDataFormat = 'raw'
+
+        # default of 25 results returned
+        self.resultSetMax = 2000
+
+        # maximum of 200 results returned
+        self.resultSetMaxCap = 20000
+
+        # records returned default to position 1 in result set
+        self.startRecord = 1
+
+        # default sort order is ascending; could also be 'desc' for descending
+        self.sortOrder = 'asc'
+
+        # field name that is being used for sorting
+        self.sortField = 'article_title'
+
+        # array of permitted search fields for searchField() method
+        self.allowedSearchFields = ['abstract', 'affiliation', 'article_number', 'article_title', 'author',
+                                    'boolean_text', 'content_type', 'd-au', 'd-pubtype', 'd-publisher', 'd-year', 'doi',
+                                    'end_year', 'facet', 'index_terms', 'isbn', 'issn', 'is_number', 'meta_data',
+                                    'open_access', 'publication_number', 'publication_title', 'publication_year',
+                                    'publisher', 'querytext', 'start_year', 'thesaurus_terms']
+
+        # dictionary of all search parameters in use and their values
+        self.parameters = {}
+
+        # dictionary of all filters in use and their values
+        self.filters = {}
+
+    # ensuring == can be used reliably
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return self.__dict__ == other.__dict__
+        else:
+            return False
+
+    # ensuring != can be used reliably
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    # set the data type for the API output
+    # string outputType   Format for the returned result (JSON, XML)
+    # return void
+    def dataType(self, outputType):
+
+        outputType = outputType.strip().lower()
+        self.outputType = outputType
+
+    # set the data format for the API output
+    # string outputDataFormat   Data structure for the returned result (raw string or object)
+    # return void
+    def dataFormat(self, outputDataFormat):
+
+        outputDataFormat = outputDataFormat.strip().lower()
+        self.outputDataFormat = outputDataFormat
+
+    # set the start position in the
+    # string start   Start position in the returned data
+    # return void
+    def startingResult(self, start):
+
+        self.startRecord = math.ceil(start) if (start > 0) else 1
+
+    # set the maximum number of results
+    # string maximum   Max number of results to return
+    # return void
+    def maximumResults(self, maximum):
+
+        self.resultSetMax = math.ceil(maximum) if (maximum > 0) else 25
+        if self.resultSetMax > self.resultSetMaxCap:
+            self.resultSetMax = self.resultSetMaxCap
+
+    # setting a filter on results
+    # string filterParam   Field used for filtering
+    # string value    Text to filter on
+    # return void
+    def resultsFilter(self, filterParam, value):
+
+        filterParam = filterParam.strip().lower()
+        value = value.strip()
+
+        if len(value) > 0:
+            self.filters[filterParam] = value
+            self.queryProvided = True
+
+            # Standards do not have article titles, so switch to sorting by article number
+            if (filterParam == 'content_type' and value == 'Standards'):
+                self.resultsSorting('publication_year', 'asc')
+
+    # setting sort order for results
+    # string field   Data field used for sorting
+    # string order   Sort order for results (ascending or descending)
+    # return void
+    def resultsSorting(self, field, order):
+
+        field = field.strip().lower()
+        order = order.strip()
+        self.sortField = field
+        self.sortOrder = order
+
+    # shortcut method for assigning search parameters and values
+    # string field   Field used for searching
+    # string value   Text to query
+    # return void
+    def searchField(self, field, value):
+
+        field = field.strip().lower()
+        if field in self.allowedSearchFields:
+            self.addParameter(field, value)
+        else:
+            print("Searches against field " + field + " are not supported")
+
+    # string value   Abstract text to query
+    # return void
+    def abstractText(self, value):
+
+        self.addParameter('abstract', value)
+
+    # string value   Affiliation text to query
+    # return void
+    def affiliationText(self, value):
+
+        self.addParameter('affiliation', value)
+
+    # string value   Article number to query
+    # return void
+    def articleNumber(self, value):
+
+        self.addParameter('article_number', value)
+
+    # string value   Article title to query
+    # return void
+    def articleTitle(self, value):
+
+        self.addParameter('article_title', value)
+
+    # string value   Author to query
+    # return void
+    def authorText(self, value):
+
+        self.addParameter('author', value)
+
+    # string value   Author Facet text to query
+    # return void
+    def authorFacetText(self, value):
+
+        self.addParameter('d-au', value)
+
+    # string value   Value(s) to use in the boolean query
+    # return void
+    def booleanText(self, value):
+
+        self.addParameter('boolean_text', value)
+
+    # string value   Content Type Facet text to query
+    # return void
+    def contentTypeFacetText(self, value):
+
+        self.addParameter('d-pubtype', value)
+
+    # string value   DOI (Digital Object Identifier) to query
+    # return void
+    def doi(self, value):
+
+        self.addParameter('doi', value)
+
+    # string value   Facet text to query
+    # return void
+    def facetText(self, value):
+
+        self.addParameter('facet', value)
+
+    # string value   Author Keywords, IEEE Terms, and Mesh Terms to query
+    # return void
+    def indexTerms(self, value):
+
+        self.addParameter('index_terms', value)
+
+    # string value   ISBN (International Standard Book Number) to query
+    # return void
+    def isbn(self, value):
+
+        self.addParameter('isbn', value)
+
+    # string value   ISSN (International Standard Serial number) to query
+    # return void
+    def issn(self, value):
+
+        self.addParameter('issn', value)
+
+    # string value   Issue number to query
+    # return void
+    def issueNumber(self, value):
+
+        self.addParameter('is_number', value)
+
+    # string value   Text to query across metadata fields and the abstract
+    # return void
+    def metaDataText(self, value):
+
+        self.addParameter('meta_data', value)
+
+    # string value   Publication Facet text to query
+    # return void
+    def publicationFacetText(self, value):
+
+        self.addParameter('d-year', value)
+
+    # string value   Publisher Facet text to query
+    # return void
+    def publisherFacetText(self, value):
+
+        self.addParameter('d-publisher', value)
+
+    # string value   Publication title to query
+    # return void
+    def publicationTitle(self, value):
+
+        self.addParameter('publication_title', value)
+
+    # string or number value   Publication year to query
+    # return void
+    def publicationYear(self, value):
+
+        self.addParameter('publication_year', value)
+
+    # string value   Text to query across metadata fields, abstract and document text
+    # return void
+    def queryText(self, value):
+
+        self.addParameter('querytext', value)
+
+    # string value   Thesaurus terms (IEEE Terms) to query
+    # return void
+    def thesaurusTerms(self, value):
+
+        self.addParameter('thesaurus_terms', value)
+
+    # add query parameter
+    # string parameter   Data field to query
+    # string value       Text to use in query
+    # return void
+    def addParameter(self, parameter, value):
+
+        value = value.strip()
+
+        if (len(value) > 0):
+
+            self.parameters[parameter] = value
+
+            # viable query criteria provided
+            self.queryProvided = True
+
+            # set flags based on parameter
+            if (parameter == 'article_number'):
+                self.usingArticleNumber = True
+
+            if (parameter == 'boolean_text'):
+                self.usingBoolean = True
+
+            if (
+                    parameter == 'facet' or parameter == 'd-au' or parameter == 'd-year' or parameter == 'd-pubtype' or parameter == 'd-publisher'):
+                self.usingFacet = True
+
+    # Open Access document
+    # string article   Article number to query
+    # return void
+    def openAccess(self, article):
+
+        self.usingOpenAccess = True
+        self.queryProvided = True
+        self.articleNumber(article)
+
+    # calls the API
+    # string debugMode  If this mode is on (True) then output query and not data
+    # return either raw result string, XML or JSON object, or array
+    def callAPI(self, debugModeOff=True):
+
+        if self.usingOpenAccess is True:
+
+            str = self.buildOpenAccessQuery()
+
+        else:
+
+            str = self.buildQuery()
+
+        if debugModeOff is False:
+
+            return str
+
+        else:
+
+            if self.queryProvided is False:
+                print("No search criteria provided")
+
+            data = self.queryAPI(str)
+            formattedData = self.formatData(data)
+            return formattedData
+
+    # creates the URL for the Open Access Document API call
+    # return string: full URL for querying the API
+    def buildOpenAccessQuery(self):
+
+        url = self.openAccessEndPoint;
+        url += str(self.parameters['article_number']) + '/fulltext'
+        url += '?apikey=' + str(self.apiKey)
+        url += '&format=' + str(self.outputType)
+
+        return url
+
+    # creates the URL for the non-Open Access Document API call
+    # return string: full URL for querying the API
+    def buildQuery(self):
+
+        url = self.endPoint;
+
+        url += '?apikey=' + str(self.apiKey)
+        url += '&format=' + str(self.outputType)
+        url += '&max_records=' + str(self.resultSetMax)
+        url += '&start_record=' + str(self.startRecord)
+        url += '&sort_order=' + str(self.sortOrder)
+        url += '&sort_field=' + str(self.sortField)
+
+        # add in search criteria
+        # article number query takes priority over all others
+        if (self.usingArticleNumber):
+
+            url += '&article_number=' + str(self.parameters['article_number'])
+
+        # boolean query
+        elif (self.usingBoolean):
+
+            url += '&querytext=(' + urllib.parse.quote_plus(self.parameters['boolean_text']) + ')'
+
+        else:
+
+            for key in self.parameters:
+
+                if (self.usingFacet and self.facetApplied is False):
+
+                    url += '&querytext=' + urllib.parse.quote_plus(self.parameters[key]) + '&facet=' + key
+                    self.facetApplied = True
+
+                else:
+
+                    url += '&' + key + '=' + urllib.parse.quote_plus(self.parameters[key])
+
+        # add in filters
+        for key in self.filters:
+            url += '&' + key + '=' + str(self.filters[key])
+        print(url)
+        return url
+
+    # creates the URL for the API call
+    # string url  Full URL to pass to API
+    # return string: Results from API
+    def queryAPI(self, url):
+
+        content = urllib2.urlopen(url).read()
+        return content
+
+    # formats the data returned by the API
+    # string data    Result string from API
+    def formatData(self, data):
+
+        if self.outputDataFormat == 'raw':
+            return data
+
+        elif self.outputDataFormat == 'object':
+
+            if self.outputType == 'xml':
+                obj = ET.ElementTree(ET.fromstring(data))
+                return obj
+
+            else:
+                obj = json.loads(data)
+                return obj
+
+        else:
+            return data
+
 
 # Create your views here.
 def index(request):
@@ -26,12 +455,13 @@ def submit(request):
     file_name = str(conf_name) + "_" + str(year_name)
     saved_file_name = 'Home/datasets/' + file_name + '.csv'
     request.session['file_name'] = saved_file_name
-
+    request.session['conference_name'] = conf_name
+    request.session['conference_year'] = year_name
     if os.path.exists(saved_file_name):
         data_frame = pd.read_csv(saved_file_name)
         context = data_frame.to_dict('records')
 
-        return render(request, "Home/second.html", {'records': context})
+        return render(request, "Home/second.html", {'records': context,'name':request.session['conference_name']})
 
     driver = webdriver.Chrome()
     query = "https://dblp.uni-trier.de/search?q=" + str(conf_name)
@@ -80,6 +510,59 @@ def submit(request):
                     authors.append(k.text)
             temp = ', '.join(temp)
             author_name.append(temp)
+    citation_google_scholar = []
+    queryR = 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q='
+
+    for i in range(len(paper_name)):
+        params = {
+            "engine": "google_scholar",
+            "q": paper_name[i],
+            #"api_key": "995e3752065c294040ed68a430e17bb456f20d77e991ab3db02d19bd55899beb",
+            "api_key": "db7f447d55c6727123e336a4d52477f4b8098fa4abb35c749c1cb719dcb839e0",
+            "start": 0
+            #  "num":20
+        }
+
+        search = GoogleSearch(params)
+        results = search.get_dict()
+        try:
+            if results['organic_results'] and 'cited_by' in results['organic_results'][0]['inline_links'].keys():
+                organic_results = results['organic_results']
+                keys = organic_results[0]['inline_links'].keys()
+                citation_google_scholar.append(organic_results[0]['inline_links']['cited_by']['total'])
+            else:
+                citation_google_scholar.append(0)
+        except:
+            citation_google_scholar.append(0)
+    citation_openalex = []
+    citation_ieee_xplore = []
+    ieeeQuery = XPLORE('3jzsb6mqekx5skc7pgr8nyqf')
+
+    for i in range(len(paper_name)):
+        string_url = paper_name[i]
+        string_url = string_url.replace(" ", "+")
+        url = 'https://api.openalex.org/works?filter=title.search:' + string_url
+
+        data = requests.get(url)
+        data = data.json()
+        try:
+            d = data['results'][0]
+            citation_openalex.append(d['cited_by_count'])
+        except:
+            citation_openalex.append(0)
+
+
+        ieeeQuery.articleTitle(paper_name[i])
+        data = ieeeQuery.callAPI()
+        dict_str = data.decode("UTF-8")
+        mydata = ast.literal_eval(dict_str)
+        try:
+            if mydata['articles'][0]['citing_paper_count']:
+                citation_ieee_xplore.append(mydata['articles'][0]['citing_paper_count'])
+            else:
+                citation_ieee_xplore.append(0)
+        except:
+            citation_ieee_xplore.append(0)
 
     data_frame = pd.DataFrame({
         #'Authors': author_name,
@@ -87,12 +570,16 @@ def submit(request):
         'Year': years,  # [year[0]]*len(author_name),
         'sources': sources,
         'place': [place]*len(sources),
-        'authors': author_name
+        'authors': author_name,
+        'citationG':citation_google_scholar,
+        'citationO':citation_openalex,
+        'citationI':citation_ieee_xplore
     })
 
     data_frame_authors = pd.DataFrame({
         'Authors':authors
     })
+
     saved_file_author_name = 'Home/datasets/author' + file_name + '.csv'
     data_frame_authors.to_csv(saved_file_author_name)
     request.session['file_name_author'] = saved_file_author_name
@@ -103,7 +590,7 @@ def submit(request):
     #data_frame.to_csv('Home/datasets/dataset.csv')
     context = data_frame.to_dict('records')
 
-    return render(request, "Home/second.html", {'records':context})
+    return render(request, "Home/second.html", {'records':context, 'name':request.session['conference_name']})
 
 
 def author(request):
@@ -127,9 +614,9 @@ def downloadfile(request):
 def statistics(request):
     detector = gender.Detector()
     gender_data = []
-    data = pd.read_csv(str(request.session['file_name_author']))
-    authors = list(data['Authors'])
-    url = 'https://api.genderize.io?name='
+    #data = pd.read_csv(str(request.session['file_name_author']))
+    #authors = list(data['Authors'])
+    #url = 'https://api.genderize.io?name='
     categories = {'male':0,
                   'female':0,
                   'other':0}
@@ -199,7 +686,7 @@ def statistics(request):
                    'topcitation':top_five_citations,
                    'lastcitation':last_five_citations})
     '''
-    return render(request, "Home/piechart.html")
+    return render(request, "Home/piechart.html",{'name':request.session['conference_name']})
 
 def statisticsTopCitation(request):
     data = pd.read_csv(str(request.session['file_name']))
@@ -247,7 +734,7 @@ def statisticsTopCitation(request):
 
     return render(request, "Home/statisticsTopCitation.html",
                   {
-                   'topcitation': top_five_citations
+                   'topcitation': top_five_citations,'name':request.session['conference_name']
                     })
 
 def statisticsLastCitation(request):
@@ -296,7 +783,7 @@ def statisticsLastCitation(request):
 
     return render(request, "Home/statisticsLastCitation.html",
                   {
-                   'lastcitation': last_five_citations})
+                   'lastcitation': last_five_citations,'name':request.session['conference_name']})
 
 
 def statisticsMostCommonAuthor(request):
@@ -311,7 +798,7 @@ def statisticsMostCommonAuthor(request):
         top_rows = data_frame.to_dict('records')
 
         return render(request, "Home/statisticsMostCommonAuthor.html",
-                      {'toprows': top_rows
+                      {'toprows': top_rows,'name':request.session['conference_name']
                        })
 
     authors = list(data['authors'])
@@ -330,7 +817,7 @@ def statisticsMostCommonAuthor(request):
     top_rows = top_five_rows.to_dict('records')
 
     return render(request, "Home/statisticsMostCommonAuthor.html",
-                  {'toprows': top_rows
+                  {'toprows': top_rows,'name':request.session['conference_name']
                     })
 
 def statisticsLeastCommonAuthor(request):
@@ -344,7 +831,7 @@ def statisticsLeastCommonAuthor(request):
         last_rows = data_frame.to_dict('records')
         return render(request, "Home/statisticsLeastCommonAuthor.html",
                       {
-                          'lastrows': last_rows
+                          'lastrows': last_rows,'name':request.session['conference_name']
                       })
 
     authors = list(data['authors'])
@@ -362,7 +849,7 @@ def statisticsLeastCommonAuthor(request):
     last_rows = last_five_rows.to_dict('records')
     return render(request, "Home/statisticsLeastCommonAuthor.html",
                   {
-                   'lastrows': last_rows
+                   'lastrows': last_rows,'name':request.session['conference_name']
                     })
 
 
@@ -378,7 +865,7 @@ def statisticsPaperTopRows(request):
         top_five_citations = data_frame.to_dict('records')
         return render(request, "Home/statisticsPaperTopRows.html",
                       {
-                          'toppaper': top_five_citations
+                          'toppaper': top_five_citations,'name':request.session['conference_name']
                       })
 
     papers = list(dataset['PaperName'])
@@ -409,7 +896,7 @@ def statisticsPaperTopRows(request):
 
     return render(request, "Home/statisticsPaperTopRows.html",
                   {
-                      'toppaper': top_five_citations
+                      'toppaper': top_five_citations,'name':request.session['conference_name']
                   })
 
 def statisticsPaperLastRows(request):
@@ -423,7 +910,7 @@ def statisticsPaperLastRows(request):
         last_five_citations = data_frame.to_dict('records')
         return render(request, "Home/statisticsPaperLastRows.html",
                     {
-                          'lastpaper': last_five_citations
+                          'lastpaper': last_five_citations,'name':request.session['conference_name']
                       })
 
     papers = list(dataset['PaperName'])
@@ -455,7 +942,7 @@ def statisticsPaperLastRows(request):
 
     return render(request, "Home/statisticsPaperLastRows.html",
                   {
-                      'lastpaper':last_five_citations
+                      'lastpaper':last_five_citations,'name':request.session['conference_name']
                   })
 
 
@@ -499,12 +986,14 @@ def authorStatistics(request):
 
     data = data_frame.to_dict('records')
 
-    return render(request, "Home/authorStatistics.html",{'context':data})
+    return render(request, "Home/authorStatistics.html",{'context':data,'name':request.session['conference_name']})
 
 def bestPaper(request):
     driver = webdriver.Chrome()
     driver.get('https://jeffhuang.com/best_paper_awards/')
-    subresult = driver.find_elements_by_id('2022')
+    year_name = request.session['conference_year']
+    #cf_name = request.session['conference_name']
+    subresult = driver.find_elements_by_id(year_name)
     subres = subresult[0].find_elements_by_tag_name('tr')
 
     conference_name = []
@@ -533,4 +1022,4 @@ def bestPaper(request):
         'authorName':author_name
     })
     data = df_conference.to_dict('records')
-    return render(request, "Home/bestPaper.html", {'context':data})
+    return render(request, "Home/bestPaper.html", {'context':data,'conf_year':year_name})

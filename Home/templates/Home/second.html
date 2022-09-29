@@ -36,8 +36,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="/Home/authorStatistics/" onclick="showMessage()">Author Details</a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showMessage()">{{name}}</a>
+            </li>
           </ul>
+
         </div>
       </div>
     </nav>
@@ -51,6 +54,7 @@
             </div>
             <p class="mb-1">{{record.sources}}, {{record.place}} ,{{record.Year}}</p>
             <p>{{record.authors}}</p>
+            <p>Google Scholar :{{record.citationI}}, Open Alex :{{record.citationO}}, IEEE Xplore :{{record.citationI}} </p>
           </a>
         </div>
         {% endfor %}

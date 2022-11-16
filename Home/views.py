@@ -495,11 +495,19 @@ def submit(request):
     paper_name = []
     years = []
     sources = []
+    paperlinks = []
+    google_scholar_link_paper = []
 
     for i in range(len(all_header)):
         driver.get(all_header[i])
         header = driver.find_elements_by_class_name('inproceedings')
         for j in range(len(header)):
+            hyperlinks = header[j].find_element_by_tag_name('nav').find_elements_by_tag_name('a')
+            paperlinks.append(hyperlinks[1].get_attribute('href'))
+            ele = header[j].find_element_by_tag_name('nav').find_elements_by_class_name('drop-down')
+            newEle = ele[2].find_elements_by_tag_name('div')[1].find_elements_by_tag_name('a')
+            google_scholar_link_paper.append(newEle[1].get_attribute('href'))
+
             paper_name.append(header[j].find_element_by_class_name('title').text)
             years.append(year[i])
             sources.append(Sources[i])
@@ -571,6 +579,7 @@ def submit(request):
         'sources': sources,
         'place': [place]*len(sources),
         'authors': author_name,
+        'hyperlink': paperlinks,
         'citationG':citation_google_scholar,
         'citationO':citation_openalex,
         'citationI':citation_ieee_xplore

@@ -1,0 +1,115 @@
+,PaperName,Year,sources,place,authors,citationG,citationO,citationI
+0,Design of a Single-Stage Wireless Charger with 92.3%-Peak-Efficiency for Portable Devices Applications.,2020,IEEE, Taiwan,"Lin Cheng, Xinyuan Ge, Wai Chiu Ng, Wing-Hung Ki, Jiawei Zheng, Tsz Fai Kwok, Chi-Ying Tsui, Ming Liu",0,0,0
+1,"A Capacitance-to-Digital Converter with Differential Bondwire Accelerometer, On-chip Air Pressure and Humidity Sensor in 0.18 μm CMOS.",2020,IEEE, Taiwan,"Sujin Park, Geon-Hwi Lee, Seungmin Oh, SeongHwan Cho",0,0,0
+2,A 28GHz CMOS Differential Bi-Directional Amplifier for 5G NR.,2020,IEEE, Taiwan,"Zheng Li, Jian Pang, Ryo Kubozoe, Xueting Luo, Rui Wu, Yun Wang, Dongwon You, Ashbir Aviat Fadila, Joshua Alvin, Bangan Liu, Zheng Sun, Hongye Huang, Atsushi Shirane, Kenichi Okada",0,0,1
+3,A Quantity Evaluation and Reconfiguration Mechanism for Signal- and Power-Interconnections in 3D-Stacking System.,2020,IEEE, Taiwan,Ching-Hwa Cheng,0,0,0
+4,An Inductively Coupled Wireless Bus for Chiplet-Based Systems.,2020,IEEE, Taiwan,"Junichiro Kadomoto, Satoshi Mitsuno, Hidetsugu Irie, Shuichi Sakai",0,0,1
+5,FPGA-based Heterogeneous Solver for Three-Dimensional Routing.,2020,IEEE, Taiwan,"Kento Hasegawa, Ryota Ishikawa, Makoto Nishizawa, Kazushi Kawamura, Masashi Tawada, Nozomu Togawa",0,0,0
+6,PowerNet: Transferable Dynamic IR Drop Estimation via Maximum Convolutional Neural Network.,2020,IEEE, Taiwan,"Zhiyao Xie, Haoxing Ren, Brucek Khailany, Ye Sheng, Santosh Santosh, Jiang Hu, Yiran Chen",0,6,20
+7,FIST: A Feature-Importance Sampling and Tree-Based Method for Automatic Design Flow Parameter Tuning.,2020,IEEE, Taiwan,"Zhiyao Xie, Guan-Qi Fang, Yu-Hung Huang, Haoxing Ren, Yanqing Zhang, Brucek Khailany, Shao-Yun Fang, Jiang Hu, Yiran Chen, Erick Carvajal Barboza",0,4,5
+8,High-Definition Routing Congestion Prediction for Large-Scale FPGAs.,2020,IEEE, Taiwan,"Mohamed Baker Alawieh, Wuxi Li, Yibo Lin, Love Singhal, Mahesh A. Iyer, David Z. Pan",0,8,10
+9,Integrated Airgap Insertion and Layer Reassignment for Circuit Timing optimization.,2020,IEEE, Taiwan,"Younggwang Jung, Daijoon Hyun, Youngsoo Shin",0,0,0
+10,An Adaptive Electromigration Assessment Algorithm for Full-chip Power/Ground Networks.,2020,IEEE, Taiwan,"Shaobin Ma, Xiaoyi Wang, Sheldon X.-D. Tan, Liang Chen, Jian He",0,0,1
+11,Template-based PDN Synthesis in Floorplan and Placement Using Classifier and CNN Techniques.,2020,IEEE, Taiwan,"Vidya A. Chhabria, Andrew B. Kahng, Minsoo Kim, Uday Mallappa, Sachin S. Sapatnekar, Bangqi Xu",0,9,14
+12,Analyzing The Security of The Cache Side Channel Defences With Attack Graphs.,2020,IEEE, Taiwan,"Limin Wang, Ziyuan Zhu, Zhanpeng Wang, Dan Meng",0,3,2
+13,iGPU Leak: An Information Leakage Vulnerability on Intel Integrated GPU.,2020,IEEE, Taiwan,"Wenjian He, Wei Zhang, Sharad Sinha, Sanjeev Das",0,1,0
+14,Design for EM Side-Channel Security through Quantitative Assessment of RTL Implementations.,2020,IEEE, Taiwan,"Jiaji He, Haocheng Ma, Xiaolong Guo, Yiqiang Zhao, Yier Jin",0,4,7
+15,"Impact of Self-Heating on Performance, Power and Reliability in FinFET Technology.",2020,IEEE, Taiwan,"Victor M. van Santen, Paul R. Genssler, Om Prakash, Simon Thomann, Jörg Henkel, Hussam Amrouch",0,0,2
+16,Reliable Power Grid Network Design Framework Considering EM Immortalities for Multi-Segment Wires.,2020,IEEE, Taiwan,"Han Zhou, Shuyuan Yu, Zeyu Sun, Sheldon X.-D. Tan",0,0,2
+17,Investigating the Inherent Soft Error Resilience of Embedded Applications by Full-System Simulation.,2020,IEEE, Taiwan,"Uzair Sharif, Daniel Mueller-Gritschneder, Ulf Schlichtmann",0,0,1
+18,Co-Exploring Neural Architecture and Network-on-Chip Design for Real-Time Artificial Intelligence.,2020,IEEE, Taiwan,"Lei Yang, Weiwen Jiang, Weichen Liu, Edwin H.-M. Sha, Yiyu Shi, Jingtong Hu",0,14,18
+19,Thanos: High-Performance CPU-GPU Based Balanced Graph Partitioning Using Cross-Decomposition.,2020,IEEE, Taiwan,"Dae Hee Kim, Rakesh Nagi, Deming Chen",0,0,1
+20,Reutilization of Trace Buffers for Performance Enhancement of NoC based MPSoCs.,2020,IEEE, Taiwan,"Sidhartha Sankar Rout, Badri M, Sujay Deb",0,1,2
+21,Formal Semantics of Predictable Pipelines: a Comparative Study.,2020,IEEE, Taiwan,"Mathieu Jan, Mihail Asavoae, Martin Schoeberl, Edward A. Lee",0,2,2
+22,Maximizing the Communication Parallelism for Wavelength-Routed Optical Networks-On-Chips.,2020,IEEE, Taiwan,"Mengchu Li, Tsun-Ming Tseng, Mahdi Tala, Ulf Schlichtmann",0,1,4
+23,Concurrency in DD-based Quantum Circuit Simulation.,2020,IEEE, Taiwan,"Stefan Hillmich, Alwin Zulehner, Robert Wille",0,3,4
+24,Approximation of Quantum States Using Decision Diagrams.,2020,IEEE, Taiwan,"Alwin Zulehner, Stefan Hillmich, Igor L. Markov, Robert Wille",0,6,5
+25,Improved DD-based Equivalence Checking of Quantum Circuits.,2020,IEEE, Taiwan,"Lukas Burgholzer, Robert Wille",0,9,12
+26,Equivalent Capacitance Guided Dummy Fill Insertion for Timing and Manufacturability.,2020,IEEE, Taiwan,"Sheng-Jung Yu, Chen-Chien Kao, Chia-Han Huang, Iris Hui-Ru Jiang",0,2,3
+27,Synthesis of Hardware Performance Monitoring and Prediction Flow Adapting to Near-Threshold Computing and Advanced Process Nodes.,2020,IEEE, Taiwan,"Jeongwoo Heo, Kwangok Jeong, Taewhan Kim, Kyu-Myung Choi",0,0,2
+28,Enhancing Generalization of Wafer Defect Detection by Data Discrepancy-aware Preprocessing and Contrast-varied Augmentation.,2020,IEEE, Taiwan,"Chaofei Yang, Hai Li, Yiran Chen, Jiang Hu",0,0,0
+29,Exploring Graphical Models with Bayesian Learning and MCMC for Failure Diagnosis.,2020,IEEE, Taiwan,"Hongfei Wang, Wenjie Cai, Jianwen Li, Kun He",0,1,1
+30,Mitigating Adversarial Attacks for Deep Neural Networks by Input Deformation and Augmentation.,2020,IEEE, Taiwan,"Pengfei Qiu, Qian Wang, Dongsheng Wang, Yongqiang Lyu, Zhaojun Lu, Gang Qu",0,2,3
+31,"When Single Event Upset Meets Deep Neural Networks: Observations, Explorations, and Remedies.",2020,IEEE, Taiwan,"Zheyu Yan, Yiyu Shi, Wang Liao, Masanori Hashimoto, Xichuan Zhou, Cheng Zhuo",0,0,13
+32,Concurrent Monitoring of Operational Health in Neural Networks Through Balanced Output Partitions.,2020,IEEE, Taiwan,"Elbruz Ozen, Alex Orailoglu",0,6,5
+33,PARC: A Processing-in-CAM Architecture for Genomic Long Read Pairwise Alignment using ReRAM.,2020,IEEE, Taiwan,"Fan Chen, Linghao Song, Hai Helen Li, Yiran Chen",0,2,6
+34,RRAM-VAC: A Variability-Aware Controller for RRAM-based Memory Architectures.,2020,IEEE, Taiwan,"Shikhar Tuli, Marco Rios, Alexandre Levisse, David Atienza",0,3,4
+35,Defects Mitigation in Resistive Crossbars for Analog Vector Matrix Multiplication.,2020,IEEE, Taiwan,"Fan Zhang, Miao Hu",0,2,4
+36,S3DET: Detecting System Symmetry Constraints for Analog Circuits with Graph Similarity.,2020,IEEE, Taiwan,"Mingjie Liu, Wuxi Li, Keren Zhu, Biying Xu, Yibo Lin, Linxiao Shen, Xiyuan Tang, Nan Sun, David Z. Pan",0,3,0
+37,Establishing Reachset Conformance for the Formal Analysis of Analog Circuits.,2020,IEEE, Taiwan,"Niklas Kochdumper, Ahmad Tarraf, Malgorzata Rechmal, Markus Olbrich, Lars Hedrich, Matthias Althoff",0,4,5
+38,Contention Minimized Bypassing in SMART NoC.,2020,IEEE, Taiwan,"Peng Chen, Weichen Liu, Mengquan Li, Lei Yang, Nan Guan",0,2,4
+39,FTT-NAS: Discovering Fault-Tolerant Neural Architecture.,2020,IEEE, Taiwan,"Wenshuo Li, Xuefei Ning, Guangjun Ge, Xiaoming Chen, Yu Wang, Huazhong Yang",0,9,8
+40,The Notion of Cross Coverage in AMS Design Verification.,2020,IEEE, Taiwan,"Sayandeep Sanyal, Aritra Hazra, Pallab Dasgupta, Scott Morrison, Sudhakar Surendran, Lakshmanan Balasubramanian",0,1,0
+41,Automated Test Generation for Activation of Assertions in RTL Models.,2020,IEEE, Taiwan,"Yangdi Lyu, Prabhat Mishra",0,6,10
+42,Machine Learning Based Online Full-Chip Heatmap Estimation.,2020,IEEE, Taiwan,"Sheriff Sadiqbatcha, Yue Zhao, Jinwei Zhang, Hussam Amrouch, Jörg Henkel, Sheldon X.-D. Tan",0,6,8
+43,A Reconfigurable Approximate Multiplier for Quantized CNN Applications.,2020,IEEE, Taiwan,"Chuliang Guo, Li Zhang, Xian Zhou, Weikang Qian, Cheng Zhuo",0,4,5
+44,EFFORT: Enhancing Energy Efficiency and Error Resilience of a Near-Threshold Tensor Processing Unit.,2020,IEEE, Taiwan,"Noel Daniel Gundi, Tahmoures Shabanian, Prabal Basu, Pramesh Pandey, Sanghamitra Roy, Koushik Chakraborty, Zhen Zhang",0,1,5
+45,Towards Efficient Kyber on FPGAs: A Processor for Vector of Polynomials.,2020,IEEE, Taiwan,"Zhaohui Chen, Yuan Ma, Tianyu Chen, Jingqiang Lin, Jiwu Jing",0,7,7
+46,Efficient Subquadratic Space Complexity Digit-Serial Multipliers over GF(2m) based on Bivariate Polynomial Basis Representation.,2020,IEEE, Taiwan,"Chiou-Yng Lee, Jiafeng Xie",0,0,0
+47,Security Threats and Countermeasures for Approximate Arithmetic Computing.,2020,IEEE, Taiwan,"Pruthvy Yellu, Mohammad Mezanur Rahman Monjur, Timothy Kammerer, Dongpeng Xu, Qiaoyan Yu",0,4,2
+48,Broadcast Mechanism Based on Hybrid Wireless/Wired NoC for Efficient Barrier Synchronization in Parallel Computing.,2020,IEEE, Taiwan,"Hemanta Kumar Mondal, Navonil Chatterjee, Rodrigo Cataldo, Jean-Philippe Diguet",0,0,0
+49,A Generic FPGA Accelerator for Minimum Storage Regenerating Codes.,2020,IEEE, Taiwan,"Mian Qin, Joo Hwan Lee, Rekha Pitchumani, Yang-Seok Ki, A. L. Narasimha Reddy, Paul V. Gratz",0,0,0
+50,Parallel-Log-Single-Compaction-Tree: Flash-Friendly Two-Level Key-Value Management in KVSSDs.,2020,IEEE, Taiwan,"Yen-Ting Chen, Ming-Chang Yang, Yuan-Hao Chang, Wei-Kuan Shih",0,0,0
+51,Towards Design Methodology of Efficient Fast Algorithms for Accelerating Generative Adversarial Networks on FPGAs.,2020,IEEE, Taiwan,"Jung-Woo Chang, Saehyun Ahn, Keon-Woo Kang, Suk-Ju Kang",0,2,6
+52,Designing Efficient Shortcut Architecture for Improving the Accuracy of Fully Quantized Neural Networks Accelerator.,2020,IEEE, Taiwan,"Baoting Li, Longjun Liu, Yanming Jin, Peng Gao, Hongbin Sun, Nanning Zheng",0,0,1
+53,CRANIA: Unlocking Data and Value Reuse in Iterative Neural Network Architectures.,2020,IEEE, Taiwan,"Maedeh Hemmat, Tejas Shah, Yuhua Chen, Joshua San Miguel",0,0,0
+54,"Tiny but Accurate: A Pruned, Quantized and Optimized Memristor Crossbar Framework for Ultra Efficient DNN Implementation.",2020,IEEE, Taiwan,"Xiaolong Ma, Geng Yuan, Sheng Lin, Caiwen Ding, Fuxun Yu, Tao Liu, Wujie Wen, Xiang Chen, Yanzhi Wang",0,0,16
+55,Towards Read-Intensive Key-Value Stores with Tidal Structure Based on LSM-Tree.,2020,IEEE, Taiwan,"Yi Wang, Shangyu Wu, Rui Mao",0,3,0
+56,A Flexible Processing-in-Memory Accelerator for Dynamic Channel-Adaptive Deep Neural Networks.,2020,IEEE, Taiwan,"Li Yang, Shaahin Angizi, Deliang Fan",0,4,5
+57,Workload-aware Data-eviction Self-adjusting System of Multi-SCM Storage to Resolve Trade-off between SCM Data-retention Error and Storage System Performance.,2020,IEEE, Taiwan,"Reika Kinoshita, Chihiro Matsui, Atsuya Suzuki, Shouhei Fukuyama, Ken Takeuchi",0,0,0
+58,An Energy-Efficient Quantized and Regularized Training Framework For Processing-In-Memory Accelerators.,2020,IEEE, Taiwan,"Hanbo Sun, Zhenhua Zhu, Yi Cai, Xiaoming Chen, Yu Wang, Huazhong Yang",0,5,8
+59,Unified Redistribution Layer Routing for 2.5D IC Packages.,2020,IEEE, Taiwan,"Chun-Han Chiang, Fu-Yu Chuang, Yao-Wen Chang",0,0,0
+60,AIR: A Fast but Lazy Timing-Driven FPGA Router.,2020,IEEE, Taiwan,"Kevin E. Murray, Sheng Zhong, Vaughn Betz",0,1,5
+61,SP&R: Simultaneous Placement and Routing framework for standard cell synthesis in sub-7nm.,2020,IEEE, Taiwan,"Dongwon Park, Daeyeal Lee, Ilgweon Kang, Sicun Gao, Bill Lin, Chung-Kuan Cheng",0,0,10
+62,Chiplet-Package Co-Design For 2.5D Systems Using Standard ASIC CAD Tools.,2020,IEEE, Taiwan,"M. D. Arafat Kabir, Yarui Peng",0,5,6
+63,Event Delivery using Prediction for Faster Parallel SystemC Simulation.,2020,IEEE, Taiwan,"Zhongqi Cheng, Emad Malekzadeh Arasteh, Rainer Dömer",0,0,1
+64,Standard-compliant Parallel SystemC simulation of Loosely-Timed Transaction Level Models.,2020,IEEE, Taiwan,"Gabriel Busnot, Tanguy Sassolas, Nicolas Ventroux, Matthieu Moy",0,1,1
+65,JIT-Based Context-Sensitive Timing Simulation for Efficient Platform Exploration.,2020,IEEE, Taiwan,"Alessandro Cornaglia, Md. Shakib Hasan, Alexander Viehl, Oliver Bringmann, Wolfgang Rosenstiel",0,3,2
+66,Towards Automatic Hardware Synthesis from Formal Specification to Implementation.,2020,IEEE, Taiwan,"Fritjof Bornebusch, Christoph Lüth, Robert Wille, Rolf Drechsler",0,1,1
+67,Emerging Non-Volatile Memories for Computation-in-Memory.,2020,IEEE, Taiwan,Bin Gao,0,2,0
+68,The Power of Computation-in-Memory Based on Memristive Devices.,2020,IEEE, Taiwan,"Jintao Yu, Muath Abu Lebdeh, Hoang Anh Du Nguyen, Mottaqiallah Taouil, Said Hamdioui",0,1,1
+69,Tolerating Retention Failures in Neuromorphic Fabric based on Emerging Resistive Memories.,2020,IEEE, Taiwan,"Christopher Münch, Rajendra Bishnoi, Mehdi Baradaran Tahoori",0,2,3
+70,Ferroelectrics: From Memory to Computing.,2020,IEEE, Taiwan,"Kai Ni, Sourav Dutta, Suman Datta",0,5,0
+71,Adaptive Circuit Approaches to Low-Power Multi-Level/Cell FeFET Memory.,2020,IEEE, Taiwan,"Juejian Wu, Yixin Xu, Bowen Xue, Yu Wang, Yongpan Liu, Huazhong Yang, Xueqing Li",0,1,3
+72,Emerging memories as enablers for in-memory layout transformation acceleration and virtualization.,2020,IEEE, Taiwan,"Minli Julie Liao, Jack Sampson",0,0,0
+73,Benchmark Non-volatile and Volatile Memory Based Hybrid Precision Synapses for In-situ Deep Neural Network Training.,2020,IEEE, Taiwan,"Yandong Luo, Shimeng Yu",0,0,1
+74,Capacitance Extraction and Power Grid Analysis Using Statistical and AI Methods.,2020,IEEE, Taiwan,"Wenjian Yu, Ming Yang, Yao Feng, Ganqu Cui, Ben Gu",0,0,0
+75,VLSI Mask Optimization: From Shallow To Deep Learning.,2020,IEEE, Taiwan,"Haoyu Yang, Wei Zhong, Yuzhe Ma, Hao Geng, Ran Chen, Wanli Chen, Bei Yu",0,4,5
+76,Bayesian Methods for the Yield Optimization of Analog and SRAM Circuits.,2020,IEEE, Taiwan,"Shuhan Zhang, Fan Yang, Dian Zhou, Xuan Zeng",0,3,2
+77,Programmable Neuromorphic Circuit based on Printed Electrolyte-Gated Transistors.,2020,IEEE, Taiwan,"Dennis D. Weller, Michael Hefenbrock, Mehdi Baradaran Tahoori, Jasmin Aghassi-Hagmann, Michael Beigl",0,2,5
+78,HashHeat: An O(C) Complexity Hashing-based Filter for Dynamic Vision Sensor.,2020,IEEE, Taiwan,"Shasha Guo, Ziyang Kang, Lei Wang, Shiming Li, Weixia Xu",0,1,1
+79,A Tuning-Free Hardware Reservoir Based on MOSFET Crossbar Array for Practical Echo State Network Implementation.,2020,IEEE, Taiwan,"Yuki Kume, Song Bian, Takashi Sato",0,0,2
+80,MindReading: An Ultra-Low-Power Photonic Accelerator for EEG-based Human Intention Recognition.,2020,IEEE, Taiwan,"Qian Lou, Wenyang Liu, Weichen Liu, Feng Guo, Lei Jiang",0,1,1
+81,LanCe: A Comprehensive and Lightweight CNN Defense Methodology against Physical Adversarial Attacks on Embedded Multimedia Applications.,2020,IEEE, Taiwan,"Zirui Xu, Fuxun Yu, Xiang Chen",0,5,5
+82,Towards Area-Efficient Optical Neural Networks: An FFT-based Architecture.,2020,IEEE, Taiwan,"Jiaqi Gu, Zheng Zhao, Chenghao Feng, Mingjie Liu, Ray T. Chen, David Z. Pan",0,12,17
+83,Automated Trigger Activation by Repeated Maximal Clique Sampling.,2020,IEEE, Taiwan,"Yangdi Lyu, Prabhat Mishra",0,8,11
+84,Audio Adversarial Examples Generation with Recurrent Neural Networks*.,2020,IEEE, Taiwan,"Kuei-Huan Chang, Po-Hao Huang, Honggang Yu, Yier Jin, Ting-Chi Wang",0,2,3
+85,Database and Benchmark for Early-stage Malicious Activity Detection in 3D Printing.,2020,IEEE, Taiwan,"Xiaolong Ma, Zhe Li, Hongjia Li, Qiyuan An, Qinru Qiu, Wenyao Xu, Yanzhi Wang",0,1,0
+86,EA-HRT: An Energy-Aware scheduler for Heterogeneous Real-Time systems.,2020,IEEE, Taiwan,"Sanjay Moulik, Rishabh Chaudhary, Zinea Das, Arnab Sarkar",0,3,3
+87,Insights and Optimizations on IR-drop Induced Sneak-Path for RRAM Crossbar-based Convolutions.,2020,IEEE, Taiwan,"Yujie Zhu, Xue Zhao, Keni Qiu",0,1,2
+88,Boosting the Profitability of NVRAM-based Storage Devices via the Concept of Dual-Chunking Data Deduplication.,2020,IEEE, Taiwan,"Shuo-Han Chen, Yu-Pei Liang, Yuan-Hao Chang, Hsin-Wen Wei, Wei-Kuan Shih",0,1,2
+89,Black Box Search Space Profiling for Accelerator-Aware Neural Architecture Search.,2020,IEEE, Taiwan,"Shulin Zeng, Hanbo Sun, Yu Xing, Xuefei Ning, Yi Shan, Xiaoming Chen, Yu Wang, Huazhong Yang",0,2,3
+90,Search-free Accelerator for Sparse Convolutional Neural Networks.,2020,IEEE, Taiwan,"Bosheng Liu, Xiaoming Chen, Yinhe Han, Ying Wang, Jiajun Li, Haobo Xu, Xiaowei Li",0,1,1
+91,NESTA: Hamming Weight Compression-Based Neural Proc. EngineAli Mirzaeian.,2020,IEEE, Taiwan,"Ali Mirzaeian, Houman Homayoun, Avesta Sasan",0,1,1
+92,Representable Matrices: Enabling High Accuracy Analog Computation for Inference of DNNs using Memristors.,2020,IEEE, Taiwan,"Baogang Zhang, Necati Uysal, Deliang Fan, Rickard Ewetz",0,0,1
+93,Reliability-Oriented IEEE Std. 1687 Network Design and Block-Aware High-Level Synthesis for MEDA Biochips.,2020,IEEE, Taiwan,"Zhanwei Zhong, Tung-Che Liang, Krishnendu Chakrabarty",0,2,3
+94,Optimization of Fluid Loading on Programmable Microfluidic Devices for Bio-protocol Execution.,2020,IEEE, Taiwan,"Satoru Maruyama, Debraj Kundu, Shigeru Yamashita, Sudip Roy",0,0,0
+95,An FPGA based Network Interface Card with Query Filter for Storage Nodes of Big Data Systems.,2020,IEEE, Taiwan,"Ying Li, Jinyu Zhan, Wei Jiang, Junting Wu, Jianping Zhu",0,2,3
+96,Nonvolatile and Energy-Efficient FeFET-Based Multiplier for Energy-Harvesting Devices.,2020,IEEE, Taiwan,"Mengyuan Li, Xunzhao Yin, Xiaobo Sharon Hu, Cheng Zhuo",0,1,4
+97,Modulo Scheduling with Rational Initiation Intervals in Custom Hardware Design.,2020,IEEE, Taiwan,"Patrick Sittel, John Wickerson, Martin Kumm, Peter Zipf",0,2,2
+98,HL-Pow: A Learning-Based Power Modeling Framework for High-Level Synthesis.,2020,IEEE, Taiwan,"Zhe Lin, Jieru Zhao, Sharad Sinha, Wei Zhang",0,4,6
+99,DRiLLS: Deep Reinforcement Learning for Logic Synthesis.,2020,IEEE, Taiwan,"Abdelrahman Hosny, Soheil Hashemi, Mohamed Shalan, Sherief Reda",0,11,9
+100,Lightening Asynchronous Pipeline Controller Through Resynthesis and Optimization.,2020,IEEE, Taiwan,"Jeongwoo Heo, Taewhan Kim",0,0,2
+101,WEID: Worst-case Error Improvement in Approximate Dividers.,2020,IEEE, Taiwan,"Hassaan Saadat, Haris Javaid, Aleksandar Ignjatovic, Sri Parameswaran",0,1,2
+102,Small-Area and Low-Power FPGA-Based Multipliers using Approximate Elementary Modules.,2020,IEEE, Taiwan,"Yi Guo, Heming Sun, Shinji Kimura",0,3,6
+103,LeAp: Leading-one Detection-based Softcore Approximate Multipliers with Tunable Accuracy.,2020,IEEE, Taiwan,"Zahra Ebrahimi, Salim Ullah, Akash Kumar",0,7,7
+104,Scaled Population Arithmetic for Efficient Stochastic Computing.,2020,IEEE, Taiwan,"He Zhou, Sunil P. Khatri, Jiang Hu, Frank Liu",0,1,3
+105,Soft Error and Its Countermeasures in Terrestrial Environment.,2020,IEEE, Taiwan,"Masanori Hashimoto, Wang Liao",0,3,3
+106,Timing Resilience for Efficient and Secure Circuits.,2020,IEEE, Taiwan,"Grace Li Zhang, Michaela Brunner, Bing Li, Georg Sigl, Ulf Schlichtmann",0,0,0
+107,Run-Time Enforcement of Non-Functional Application Requirements in Heterogeneous Many-Core Systems.,2020,IEEE, Taiwan,"Jürgen Teich, Behnaz Pourmohseni, Oliver Keszöcze, Jan Spieck, Stefan Wildermann",0,1,2
+108,NCFET to Rescue Technology Scaling: Opportunities and Challenges.,2020,IEEE, Taiwan,"Hussam Amrouch, Victor M. van Santen, Girish Pahwa, Yogesh Singh Chauhan, Jörg Henkel",0,1,2
+109,Parallelism in Deep Learning Accelerators.,2020,IEEE, Taiwan,"Linghao Song, Fan Chen, Yiran Chen, Hai Helen Li",0,37,0
+110,Software-Based Memory Analysis Environments for In-Memory Wear-Leveling.,2020,IEEE, Taiwan,"Christian Hakert, Kuan-Hsun Chen, Mikail Yayla, Georg von der Brüggen, Sebastian Blömeke, Jian-Jia Chen",0,2,4
+111,Theory of Ising Machines and a Common Software Platform for Ising Machines.,2020,IEEE, Taiwan,"Shu Tanaka, Yoshiki Matsuda, Nozomu Togawa",0,1,5
+112,Digital Annealer for High-Speed Solving of Combinatorial optimization Problems and Its Applications.,2020,IEEE, Taiwan,"Satoshi Matsubara, Motomu Takatsu, Toshiyuki Miyazawa, Takayuki Shibasaki, Yasuhiro Watanabe, Kazuya Takemoto, Hirotaka Tamura",0,19,13
+113,CMOS Annealing Machine: A Domain-Specific Architecture for Combinatorial Optimization Problem.,2020,IEEE, Taiwan,"Chihiro Yoshimura, Masato Hayashi, Takashi Takemoto, Masanao Yamaoka",0,3,5

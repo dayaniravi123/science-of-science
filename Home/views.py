@@ -12,6 +12,7 @@ import gender_guesser.detector as gender
 from scholarly import scholarly
 from collections import Counter
 from serpapi import GoogleSearch
+from selenium.webdriver.common.by import By
 
 ## Global variable
 authors = []
@@ -467,27 +468,28 @@ def submit(request):
     query = "https://dblp.uni-trier.de/search?q=" + str(conf_name)
     #driver.get("https://dblp.uni-trier.de/search?q=asp-dac")
     driver.get(query)
-    divs = driver.find_elements_by_class_name('result-list')
+    divs = driver.find_elements(By.CLASS_NAME, 'result-list')
 
     result = []
-    for i in divs[0].find_elements_by_tag_name('a'):
+    for i in divs[0].find_elements(By.TAG_NAME, 'a'):
         result.append(i.get_attribute('href'))
 
     driver.get(result[0])
     all_header = []
     year = []
     Sources = []
-    title = driver.find_element_by_class_name('title')
+    title = driver.find_element(By.CLASS_NAME, 'title')
     title = title.text
     place = title.split(",")[-3]
-    header = driver.find_elements_by_class_name('publ-list')
+    header = driver.find_elements(By.CLASS_NAME, 'publ-list')
     #print(str(year_name))
     for i in header:
         #print(type(i.find_elements_by_tag_name('span')[4].text))
-        if i.find_elements_by_tag_name('span')[4].text == str(year_name):
-            year.append(i.find_elements_by_tag_name('span')[4].text)
-            Sources.append(i.find_elements_by_tag_name('span')[3].text)
-            element = i.find_element_by_class_name('toc-link')
+        #if i.find_elements(By.TAG_NAME, 'span')[4].text == str(year_name):
+        if str(year_name) in i.find_elements(By.TAG_NAME, 'span')[4].text:
+            year.append(i.find_elements(By.TAG_NAME, 'span')[4].text)
+            Sources.append(i.find_elements(By.TAG_NAME, 'span')[3].text)
+            element = i.find_element(By.CLASS_NAME, 'toc-link')
             all_header.append(element.get_attribute('href'))
             #print('hi')
         #print(element.get_attribute('href'))
@@ -500,19 +502,19 @@ def submit(request):
 
     for i in range(len(all_header)):
         driver.get(all_header[i])
-        header = driver.find_elements_by_class_name('inproceedings')
+        header = driver.find_elements(By.CLASS_NAME, 'inproceedings')
         for j in range(len(header)):
-            hyperlinks = header[j].find_element_by_tag_name('nav').find_elements_by_tag_name('a')
+            hyperlinks = header[j].find_element(By.TAG_NAME, 'nav').find_elements(By.TAG_NAME, 'a')
             paperlinks.append(hyperlinks[1].get_attribute('href'))
-            ele = header[j].find_element_by_tag_name('nav').find_elements_by_class_name('drop-down')
-            newEle = ele[2].find_elements_by_tag_name('div')[1].find_elements_by_tag_name('a')
+            ele = header[j].find_element(By.TAG_NAME, 'nav').find_elements(By.CLASS_NAME, 'drop-down')
+            newEle = ele[2].find_elements(By.TAG_NAME, 'div')[1].find_elements(By.TAG_NAME, 'a')
             google_scholar_link_paper.append(newEle[1].get_attribute('href'))
 
-            paper_name.append(header[j].find_element_by_class_name('title').text)
+            paper_name.append(header[j].find_element(By.CLASS_NAME, 'title').text)
             years.append(year[i])
             sources.append(Sources[i])
             temp = []
-            for k in header[j].find_elements_by_tag_name('a'):
+            for k in header[j].find_elements(By.TAG_NAME, 'a'):
                 if k.text:
                     temp.append(k.text)
                     authors.append(k.text)
@@ -621,8 +623,8 @@ def downloadfile(request):
     #return response
 
 def statistics(request):
-    detector = gender.Detector()
-    gender_data = []
+    #detector = gender.Detector()
+    #gender_data = []
     #data = pd.read_csv(str(request.session['file_name_author']))
     #authors = list(data['Authors'])
     #url = 'https://api.genderize.io?name='
@@ -1002,15 +1004,15 @@ def bestPaper(request):
     driver.get('https://jeffhuang.com/best_paper_awards/')
     year_name = request.session['conference_year']
     #cf_name = request.session['conference_name']
-    subresult = driver.find_elements_by_id(year_name)
-    subres = subresult[0].find_elements_by_tag_name('tr')
+    subresult = driver.find_elements(By.ID,year_name)
+    subres = subresult[0].find_elements(By.TAG_NAME, 'tr')
 
     conference_name = []
     for i in range(1, len(subres)):
         temp = []
-        for j in subres[i].find_elements_by_tag_name('th'):
+        for j in subres[i].find_elements(By.TAG_NAME, 'th'):
             temp.append(j.text)
-        for j in subres[i].find_elements_by_tag_name('td'):
+        for j in subres[i].find_elements(By.TAG_NAME, 'td'):
             temp.append(j.text.split("; ")[0])
         conference_name.append(temp)
     cf_name = []
